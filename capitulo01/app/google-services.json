@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "98041754214",
+    "project_id": "moviles-2026a-gr1-mslu",
+    "storage_bucket": "moviles-2026a-gr1-mslu.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:98041754214:android:7bf37afe1ecc5ace81f3a7",
+        "android_client_info": {
+          "package_name": "com.example.moviles2026aswgr1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZeWVJ4rJp0pUW1qDsDOQDbpt5PA-F0R0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
