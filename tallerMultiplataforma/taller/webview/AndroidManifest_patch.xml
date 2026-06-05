@@ -1,0 +1,22 @@
+<!-- Cambio requerido en AndroidManifest.xml -->
+<!-- Agrega android:configChanges a la <activity> para que
+     onConfigurationChanged() sea llamado sin recrear la Activity -->
+
+<activity
+    android:name=".MainActivity"
+    android:exported="true"
+    android:configChanges="orientation|screenSize|locale|layoutDirection">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity>
+
+<!--
+    IMPORTANTE: android:configChanges="orientation|screenSize|locale"
+    evita que Android destruya y recree la Activity al rotar o cambiar idioma.
+    En su lugar, llama a onConfigurationChanged(), donde nosotros
+    invocamos actualizarUI() en el WebView.
+
+    Sin esto, el WebView recargaría la página completa en cada rotación.
+-->

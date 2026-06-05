@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebView Demo</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* El color de fondo lo inyecta actualizarUI() — NO CSS Media Queries */
+            transition: background-color 0.2s;
+        }
+
+        #msg {
+            font-size: 32px;
+            font-weight: bold;
+            font-family: sans-serif;
+            text-align: center;
+            padding: 24px;
+            /* El color lo inyecta actualizarUI() */
+            transition: color 0.2s;
+        }
+    </style>
+</head>
+<body>
+    <span id="msg">Cargando...</span>
+
+    <script>
+        /**
+         * Lee los valores desde el puente nativo (AndroidBridge).
+         * Android ya resolvió el calificador correcto antes de llamar aquí.
+         * Esta función NO contiene lógica de idioma ni orientación.
+         */
+        function actualizarUI() {
+            // Android es el objeto registrado con addJavascriptInterface()
+            if (typeof Android === 'undefined') {
+                document.getElementById('msg').textContent =
+                    'Ejecutar en WebView de Android';
+                return;
+            }
+
+            const mensaje     = Android.getMensaje();
+            const colorTexto  = Android.getColorTexto();
+            const colorFondo  = Android.getColorFondo();
+
+            document.body.style.backgroundColor = colorFondo;
+            document.getElementById('msg').style.color = colorTexto;
+            document.getElementById('msg').textContent  = mensaje;
+        }
+
+        // Primer render al cargar
+        window.addEventListener('load', actualizarUI);
+    </script>
+</body>
+</html>

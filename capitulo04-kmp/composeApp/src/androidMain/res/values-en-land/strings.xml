@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Landscape - Inglés -->
+    <string name="app_name">KMP Resources App</string>
+    <string name="text_content">Text D - Landscape English</string>
+
+    <color name="text_color">#6A1B9A</color>
+    <color name="background_color">#E91E63</color>
+</resources>
+

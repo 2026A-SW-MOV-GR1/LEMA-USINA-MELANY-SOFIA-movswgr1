@@ -1,0 +1,19 @@
+<!-- Opción 5 — NativeScript -->
+<!-- main-page.xml -->
+<!-- El binding conecta con el ViewModel; los valores cambian
+     sin tocar la vista cuando el ViewModel llama a cargarRecursos() -->
+
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      navigatingTo="navigatingTo"
+      backgroundColor="{{ colorFondo }}">
+
+    <Label
+        text="{{ mensaje }}"
+        color="{{ colorTexto }}"
+        fontSize="32"
+        fontWeight="bold"
+        textAlignment="center"
+        verticalAlignment="middle"
+        horizontalAlignment="center" />
+
+</Page>

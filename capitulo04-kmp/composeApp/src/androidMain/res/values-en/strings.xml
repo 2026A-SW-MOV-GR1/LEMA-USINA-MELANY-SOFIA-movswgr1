@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Portrait - Inglés (English) -->
+    <string name="app_name">KMP Resources App</string>
+    <string name="text_content">Text B - Portrait English</string>
+
+    <color name="text_color">#FFFFFF</color>
+    <color name="background_color">#2196F3</color>
+</resources>
+
