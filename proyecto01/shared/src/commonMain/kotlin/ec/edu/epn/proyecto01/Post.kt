@@ -1,4 +1,11 @@
 package ec.edu.epn.proyecto01
 
-class Post {
-}
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class Post(
+    val userId: Int,
+    val id: Int,
+    val title: String,
+    val body: String
+)
