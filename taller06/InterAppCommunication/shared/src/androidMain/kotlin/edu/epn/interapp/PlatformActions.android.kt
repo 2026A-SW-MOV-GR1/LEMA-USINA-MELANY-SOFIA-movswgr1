@@ -31,13 +31,12 @@ class AndroidPlatformActions(
     }
 }
 
-// Global reference to be initialized in MainActivity
 private var platformActionsInstance: PlatformActions? = null
 
 fun initializePlatformActions(activity: ComponentActivity, onPhotoCaptured: (ImageBitmap?) -> Unit) {
     platformActionsInstance = AndroidPlatformActions(activity, onPhotoCaptured)
 }
 
-actual fun getPlatformActions(onPhotoCaptured: (ImageBitmap?) -> Unit): PlatformActions {
+actual fun getPlatformActions(): PlatformActions {
     return platformActionsInstance ?: throw IllegalStateException("PlatformActions not initialized")
 }
